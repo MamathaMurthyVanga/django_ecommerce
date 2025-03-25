@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Update Profile</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Update user profile</p>
+        </div>
+    </div>
+</header>
+<br></br>
+
+<div class="container">
+    <div class="row">
+       
+            <div class="col-md-6 offset-md-3">
+
+                {% if form.errors %}
+                    <div class="alert alert-danger">
+                        <strong>Oops! There was an error in registering. Try again</strong>
+                        <ul>
+                            {% for field, errors in form.errors.items %}
+                                {% for error in errors %}
+                                    <li><strong>{{ field|capfirst }}</strong>: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <form method="post" action="{% url 'update_user' %}">
+                    {% csrf_token %}
+                    {{ user_form.as_p }}
+                    <button type="submit" class="btn btn-secondary">Update Profile</button>
+                    
+                <br></br>
+                <a href="{% url 'update_password' %}" class="btn btn-secondary">Update Password</a>
+
+                <br></br>
+
+                <br></br>
+
+                
+            </div>
+      
+    </div>
+</div>
+
+{% endblock %}
