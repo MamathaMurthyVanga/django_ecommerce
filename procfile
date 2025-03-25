@@ -1,3 +1,3 @@
 release: python manage.py migrate
-web: gunicorn store.wsgi:application --bind 0.0.0.0:$PORT --log-file -
+web: gunicorn ecom.wsgi:application --bind 0.0.0.0:$PORT --log-file -
 
