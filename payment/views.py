@@ -203,7 +203,7 @@ def billing_info(request):
         host = request.get_host()
         # create paypal form 
         paypal_dict = {
-            'business': settings.PAYPAl_RECEIVER_EMAIL,
+            'business': settings.PAYPAL_RECEIVER_EMAIL,
             'amount': totals,
             'item_name': 'Veg order',
             'no_shipping': '2',
