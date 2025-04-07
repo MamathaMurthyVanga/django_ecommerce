@@ -199,9 +199,10 @@ def billing_info(request):
         my_shipping = request.POST
         request.session['my_shipping'] = my_shipping
 
+    
         # get the host
         host = request.get_host()
-        # create paypal form 
+        # create paypal form dict
         paypal_dict = {
             'business': settings.PAYPAL_RECEIVER_EMAIL,
             'amount': totals,
