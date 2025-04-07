@@ -208,7 +208,7 @@ def billing_info(request):
             'item_name': 'Veg order',
             'no_shipping': '2',
             'invoice': str(uuid.uuid4()),
-            'currency_code': 'USD',
+            'currency_code': 'INR',
             'notify_url': 'https://{}{}'.format(host, reverse("paypal-ipn")),
             'return_url': 'https://{}{}'.format(host, reverse("payment_success")),
             'cancel_return': 'https://{}{}'.format(host, reverse("payment_failed")),
