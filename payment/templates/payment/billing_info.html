@@ -73,7 +73,12 @@
                           </div>
                           <br/><br/>
 
-                          <center>{{paypal_form.render}}</center>
+                          <!-- <center>{{paypal_form.render}}</center> -->
+                          <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+                            {{ paypal_form.as_p }}
+                            <input type="submit" value="Pay with PayPal" class="btn btn-primary" />
+                          </form>
+                          
 
 
                           <br/><br/>
